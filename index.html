@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Formatura Info 2026 · Rafael</title>
+<meta name="description" content="Convite de formatura de Rafael, Técnico em Informática 2026.">
+<style>
+/* Layout: uma área de trabalho do Windows XP em azul-marinho. Janelas arrastáveis sobre o Bliss, adesivos halftone soltos, barra de tarefas fixa. Uma coluna no celular, duas no desktop. */
+:root {
+  --navy-900: #06122e;
+  --navy-700: #0a246a;
+  --blue-500: #245edc;
+  --sky-300: #7fa8f0;
+  --paper: #ece9d8;
+  --ink: #0a1f44;
+  --green: #3c9a3c;
+  --close: #d9512c;
+
+  --font-ui: Tahoma, "Trebuchet MS", "Noto Sans", Verdana, sans-serif;
+  --font-title: "Trebuchet MS", Tahoma, "Noto Sans", sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--navy-900); }
+body {
+  margin: 0;
+  background-color: #1b45c4;
+  background-image: url("img/bliss.jpg");
+  background-size: cover;
+  background-position: 50% 100%;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.45;
+  min-height: 100vh;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 84px;
+  overflow-x: hidden;
+}
+body::after { /* granulado */
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .16; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.stage { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; }
+
+/* título */
+.hero { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; padding-block: 8px 18px; }
+.hero img { width: min(640px, 92%); height: auto; filter: drop-shadow(0 6px 0 rgba(6,18,46,.45)); transform: rotate(-1.5deg); }
+.hero .tag { margin: 0; color: #fff; font: 700 clamp(15px, 3.6vw, 22px)/1.2 var(--font-title); letter-spacing: .12em; text-transform: uppercase; text-shadow: 2px 2px 0 var(--navy-700); }
+
+/* janelas */
+.grid { display: grid; gap: 22px; grid-template-columns: 1fr; align-items: start; }
+.win {
+  position: relative;
+  min-width: 0;
+  background: var(--paper);
+  border: 3px solid var(--navy-700);
+  border-top: 0;
+  border-radius: 9px 9px 3px 3px;
+  box-shadow: 6px 8px 0 rgba(6,18,46,.5);
+}
+.win.is-drag { box-shadow: 10px 14px 0 rgba(6,18,46,.45); }
+.bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 5px 5px 10px;
+  margin: 0 -3px;
+  border-radius: 9px 9px 0 0;
+  background: linear-gradient(#3b78e8 0%, var(--blue-500) 12%, var(--navy-700) 100%);
+  color: #fff; touch-action: none; cursor: grab; user-select: none;
+}
+.bar h2 { margin: 0; flex: 1; min-width: 0; font: 700 15px/1.2 var(--font-title); text-shadow: 1px 1px 0 rgba(0,0,0,.55); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dots { display: flex; gap: 3px; }
+.dot { width: 22px; height: 22px; border-radius: 4px; border: 1px solid #fff; background: linear-gradient(#5b92f0, #1d4bc0); color: #fff; font: 700 13px/1 var(--font-ui); display: grid; place-items: center; padding: 0; cursor: default; }
+.dot.x { background: linear-gradient(#ee8a6c, var(--close)); }
+button.dot { cursor: pointer; }
+button.dot:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+.body { padding: 18px; }
+.win.is-min .body { display: none; }
+
+/* convite */
+.w-invite .body { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); align-items: end; }
+.kid-wrap { background: var(--navy-700); border: 2px inset #8aa0d4; border-radius: 2px; display: grid; place-items: end center; overflow: hidden; aspect-ratio: 4/4.3; }
+.kid-wrap img { display: block; height: 100%; width: auto; max-width: 100%; object-fit: contain; filter: drop-shadow(0 0 0 transparent); }
+.lede { margin: 0; font: 700 clamp(24px, 6.4vw, 34px)/1.08 var(--font-title); color: var(--navy-700); text-wrap: balance; }
+.lede em { font-style: normal; background: var(--navy-700); color: #fff; padding: 0 .25em; }
+.sub { margin: 8px 0 0; font-family: var(--font-mono); font-size: 15px; }
+.who { margin: 14px 0 0; padding-top: 12px; border-top: 2px dotted #9aa3b9; font-size: 13px; color: #34415f; }
+.who strong { display: block; font: 700 20px/1.2 var(--font-title); color: var(--ink); }
+
+/* detalhes */
+.rows { margin: 0; display: grid; gap: 0; }
+.row { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid #c4c0a8; align-items: center; }
+.row:last-child { border-bottom: 0; }
+.row dt { font: 700 12px/1 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: #4a5a85; }
+.row dd { margin: 0; font: 700 clamp(18px, 4.6vw, 22px)/1.2 var(--font-title); }
+.row dd small { display: block; font: 400 13px/1.3 var(--font-ui); color: #4a5a85; }
+.pending { color: #8a5a00; }
+
+/* diálogo de presença */
+.msg { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: start; }
+.msg img { width: 56px; height: auto; image-rendering: pixelated; }
+.msg p { margin: 0 0 4px; }
+.msg .big { font: 700 18px/1.25 var(--font-title); }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; margin-top: 16px; }
+.xp-btn {
+  appearance: none; display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 8px 22px;
+  background: linear-gradient(#fff 0%, #f1f0e6 70%, #d6d0c0 100%);
+  border: 1px solid #003c74; border-radius: 4px; color: #000; font: 400 15px/1 var(--font-ui);
+  text-decoration: none; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(255,255,255,.7);
+}
+.xp-btn.primary { font-weight: 700; box-shadow: inset 0 0 0 2px #7fa8f0; }
+.xp-btn:hover { box-shadow: inset 0 0 0 2px #f9b43a; }
+.xp-btn:active { background: linear-gradient(#d6d0c0, #f1f0e6); }
+.xp-btn:focus-visible { outline: 2px dotted #000; outline-offset: 2px; }
+.status { min-height: 1.4em; margin: 10px 0 0; font-size: 13px; color: #34415f; }
+
+/* rodapé das janelas menores */
+.w-game .body { padding: 12px; background: var(--paper); }
+.w-game canvas { display: block; width: 100%; height: auto; background: #f7f5ea; border: 2px inset #8aa0d4; image-rendering: pixelated; touch-action: manipulation; cursor: pointer; outline-offset: 2px; -webkit-tap-highlight-color: transparent; }
+.w-game .hint { margin: 8px 0 0; font: 400 13px/1.3 var(--font-mono); color: #34415f; }
+.w-class .body { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; align-items: center; }
+.w-class img { width: 112px; height: auto; }
+.w-class p { margin: 0; }
+.w-class .k { font: 700 12px/1 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: #4a5a85; }
+.w-class .v { font: 700 20px/1.2 var(--font-title); }
+
+/* adesivos de área de trabalho */
+.deco { position: absolute; pointer-events: none; z-index: 2; height: auto; filter: drop-shadow(4px 6px 0 rgba(6,18,46,.45)); }
+.d-pc { width: clamp(64px, 15vw, 176px); right: -4px; top: 0; transform: rotate(4deg); }
+.d-cd { width: clamp(56px, 12vw, 140px); left: -2px; top: 4px; transform: rotate(-12deg); }
+.pw { position: relative; display: inline-flex; }
+.cur { position: absolute; right: -8px; bottom: -16px; width: 26px; height: auto; pointer-events: none; filter: drop-shadow(2px 3px 0 rgba(6,18,46,.45)); }
+.col { display: grid; gap: 22px; min-width: 0; align-content: start; }
+@media (min-width: 760px) { .col { gap: 28px; } }
+.rail { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 6px 22px; margin-top: 26px; }
+.rail img { height: auto; filter: drop-shadow(4px 6px 0 rgba(6,18,46,.45)); }
+.rail .r-fone { width: 82px; transform: rotate(8deg); }
+.rail .r-disq { width: 120px; transform: rotate(-6deg); }
+.rail .r-mouse { width: 130px; transform: rotate(5deg); }
+.rail .r-dino { width: 72px; }
+
+/* barra de tarefas */
+.task {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  display: flex; align-items: stretch; gap: 8px; height: calc(46px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px);
+  background: linear-gradient(#3b78e8 0%, var(--blue-500) 10%, #1a49b8 85%, #12379a 100%);
+  border-top: 2px solid #5b92f0; color: #fff;
+}
+.start { display: flex; align-items: center; gap: 8px; padding: 0 22px 0 14px; border: 0; border-radius: 0 14px 14px 0; background: linear-gradient(#5dbd5d 0%, var(--green) 45%, #2a7a2a 100%); color: #fff; font: italic 700 20px/1 var(--font-title); text-shadow: 1px 2px 0 rgba(0,0,0,.45); box-shadow: 2px 0 6px rgba(0,0,0,.4); cursor: pointer; }
+.start:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+.start .flag { width: 18px; height: 18px; display: grid; grid-template: 1fr 1fr / 1fr 1fr; gap: 1px; transform: skewX(-6deg); }
+.start .flag i { display: block; } .flag i:nth-child(1){background:#f25022}.flag i:nth-child(2){background:#7fba00}.flag i:nth-child(3){background:#00a4ef}.flag i:nth-child(4){background:#ffb900}
+.tabs { flex: 1; min-width: 0; display: flex; align-items: center; padding-block: 5px; }
+.tab { max-width: 200px; min-width: 0; padding: 0 14px; height: 100%; display: flex; align-items: center; border-radius: 4px; background: #1a3f9f; box-shadow: inset 1px 1px 3px rgba(0,0,0,.55); font: 400 13px/1 var(--font-ui); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.clock { display: flex; align-items: center; padding: 0 14px; background: linear-gradient(#0f8fe8, #1087d8 60%, #0b6fc0); border-left: 2px solid #0b4aa0; font: 400 13px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+.menu { position: fixed; left: env(safe-area-inset-left, 0px); bottom: calc(46px + env(safe-area-inset-bottom, 0px)); z-index: 19; width: min(300px, 100vw); background: var(--paper); border: 3px solid var(--blue-500); border-radius: 9px 9px 0 0; box-shadow: 6px 8px 0 rgba(6,18,46,.5); overflow: hidden; }
+.menu header { padding: 10px 14px; background: linear-gradient(#3b78e8, var(--navy-700)); color: #fff; font: 700 16px/1 var(--font-title); }
+.menu a { display: block; padding: 12px 14px; color: var(--ink); text-decoration: none; font-size: 15px; border-bottom: 1px solid #d3cfba; }
+.menu a:hover, .menu a:focus-visible { background: var(--blue-500); color: #fff; outline: 0; }
+
+@media (min-width: 760px) {
+  .w-game { grid-column: 1 / -1; }
+  body { padding-top: 30px; }
+  .grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; }
+  .w-invite .body { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-top: 12px; }
+}
+@media (min-width: 1000px) {
+  .grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+  .hero img { transform: rotate(-1.5deg) translateX(-30px); }
+}
+@media (max-width: 759px) {
+  .hero { padding-top: 72px; }
+  .d-pc { top: -8px; right: -6px; width: 76px; }
+  .d-cd { top: -4px; left: -6px; width: 68px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero img { animation: pop .6s ease-out both; }
+  @keyframes pop { from { transform: scale(.94) rotate(-4deg); } }
+}
+</style>
+</head>
+<body>
+<main class="stage">
+  <img class="deco d-cd" src="img/cd.webp" alt="" width="462" height="465">
+  <img class="deco d-pc" src="img/computador.webp" alt="" width="542" height="607">
+
+  <header class="hero">
+    <img src="img/formatura.webp" alt="Formatura" width="1000" height="222">
+    <p class="tag">Técnico em Informática · 2026</p>
+  </header>
+
+  <div class="grid">
+    <section class="win w-invite" aria-labelledby="t-invite" data-win>
+      <div class="bar"><h2 id="t-invite">Convite.exe</h2><div class="dots"><button class="dot" type="button" data-min aria-label="Minimizar janela">_</button><span class="dot" aria-hidden="true">▢</span><span class="dot x" aria-hidden="true">✕</span></div></div>
+      <div class="body">
+        <div class="kid-wrap"><img src="img/alunos/rafael.webp" alt="Rafael quando criança" width="580" height="832"></div>
+        <div>
+          <p class="lede">Oficialmente serei <em>técnico em Informática!</em></p>
+          <p class="sub">&gt; Te convido a celebrar comigo_</p>
+          <p class="who"><strong>Rafael</strong>Formando da turma de Informática 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="col">
+    <section class="win w-details" aria-labelledby="t-det" data-win>
+      <div class="bar"><h2 id="t-det">Detalhes.exe</h2><div class="dots"><button class="dot" type="button" data-min aria-label="Minimizar janela">_</button><span class="dot" aria-hidden="true">▢</span><span class="dot x" aria-hidden="true">✕</span></div></div>
+      <div class="body">
+        <dl class="rows">
+          <div class="row"><dt>Data</dt><dd id="f-date" class="pending">A confirmar</dd></div>
+          <div class="row"><dt>Hora</dt><dd id="f-time" class="pending">A confirmar</dd></div>
+          <div class="row"><dt>Local</dt><dd id="f-place" class="pending">A confirmar<small id="f-addr"></small></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="win w-rsvp" aria-labelledby="t-rsvp" data-win>
+      <div class="bar"><h2 id="t-rsvp">Você está convidado(a)</h2><div class="dots"><button class="dot" type="button" data-min aria-label="Minimizar janela">_</button><span class="dot" aria-hidden="true">▢</span><span class="dot x" aria-hidden="true">✕</span></div></div>
+      <div class="body">
+        <div class="msg">
+          <img src="img/dino.webp" alt="" width="420" height="521">
+          <div>
+            <p class="big">Rafael quer você na formatura.</p>
+            <p>Confirme sua presença para ele saber quantos lugares reservar.</p>
+          </div>
+        </div>
+        <div class="btns">
+          <span class="pw"><a class="xp-btn primary" id="rsvp" href="#rsvp">Confirmar presença</a><img class="cur" src="img/cursor.webp" alt="" width="220" height="330"></span>
+          <button class="xp-btn" id="cancel" type="button">Cancelar</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+    </div>
+
+    <section class="win w-game" aria-labelledby="t-game" data-win>
+      <div class="bar"><h2 id="t-game">Dino.exe</h2><div class="dots"><button class="dot" type="button" data-min aria-label="Minimizar janela">_</button><span class="dot" aria-hidden="true">▢</span><span class="dot x" aria-hidden="true">✕</span></div></div>
+      <div class="body"><canvas id="game" width="1200" height="300" tabindex="0" aria-label="Jogo do dinossauro de capelo: toque ou aperte espaço para pular os cactos"></canvas><p class="hint" id="hint">Toque na tela ou aperte espaço para jogar.</p></div>
+    </section>
+
+    <section class="win w-class" aria-labelledby="t-class" data-win>
+      <div class="bar"><h2 id="t-class">Turma.exe</h2><div class="dots"><button class="dot" type="button" data-min aria-label="Minimizar janela">_</button><span class="dot" aria-hidden="true">▢</span><span class="dot x" aria-hidden="true">✕</span></div></div>
+      <div class="body">
+        <img src="img/browsers.webp" alt="Logotipo Browsers: dinossauro azul com lupa" width="420" height="407">
+        <div><p class="k">Turma</p><p class="v">Browsers</p><p class="k" style="margin-top:10px">Curso</p><p class="v">Informática · 2026</p></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="rail" aria-hidden="true">
+    <img class="r-fone" src="img/fone.webp" alt="" width="402" height="592">
+    <img class="r-disq" src="img/disquete.webp" alt="" width="542" height="290">
+    <img class="r-mouse" src="img/mouse.webp" alt="" width="542" height="259">
+  </div>
+</main>
+
+<nav class="menu" id="menu" hidden aria-label="Menu iniciar">
+  <header>Rafael</header>
+  <a href="#t-invite">Convite.exe</a>
+  <a href="#t-det">Detalhes.exe</a>
+  <a href="#t-rsvp">Confirmar presença</a>
+  <a href="#t-class">Turma.exe</a>
+</nav>
+<div class="task">
+  <button class="start" id="start" type="button" aria-expanded="false" aria-controls="menu"><span class="flag" aria-hidden="true"><i></i><i></i><i></i><i></i></span>iniciar</button>
+  <div class="tabs"><span class="tab">Formatura Info 2026</span></div>
+  <div class="clock" id="clock" aria-hidden="true">--:--</div>
+</div>
+
+<script>
+/* EDITE AQUI: preencha quando tiver os dados. Deixe "" para mostrar "A confirmar". */
+const CONFIG = {
+  data: "01 de dezembro de 2026",
+  hora: "18:00",
+  local: "Auditório Central do IFBA",
+  endereco: "",    // ex.: "Cra 4 #68-72"
+  linkConfirmar: "https://docs.google.com/forms/d/e/1FAIpQLSd6l9Tg37DLvojaL-YSxKKWb6ns3MDMaFeyNfEGPaLGVK-fSA/viewform?usp=dialog", // ex.: "https://wa.me/55719XXXXXXXX?text=Confirmo%20presen%C3%A7a"
+};
+
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function fill(id, v) { if (v) { var el = $(id); el.firstChild.nodeValue = v; el.classList.remove("pending"); } }
+  fill("f-date", CONFIG.data); fill("f-time", CONFIG.hora); fill("f-place", CONFIG.local);
+  if (CONFIG.endereco) $("f-addr").textContent = CONFIG.endereco;
+
+  /* botão de presença */
+  var rsvp = $("rsvp"), status = $("status");
+  if (CONFIG.linkConfirmar) { rsvp.href = CONFIG.linkConfirmar; rsvp.target = "_blank"; rsvp.rel = "noopener"; }
+  else rsvp.addEventListener("click", function (e) { e.preventDefault(); status.textContent = "O link de confirmação ainda não foi adicionado. Volte em breve."; });
+  $("cancel").addEventListener("click", function () { status.textContent = "Erro: saudade da escola não encontrada. Operação cancelada."; });
+
+  /* relógio: horário da festa se houver, senão o horário atual */
+  var clock = $("clock");
+  function tick() { clock.textContent = CONFIG.hora || new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }); }
+  tick(); if (!CONFIG.hora) setInterval(tick, 20000);
+
+  /* menu iniciar */
+  var start = $("start"), menu = $("menu");
+  function toggle(open) { menu.hidden = !open; start.setAttribute("aria-expanded", String(open)); }
+  start.addEventListener("click", function (e) { e.stopPropagation(); toggle(menu.hidden); });
+  document.addEventListener("click", function () { toggle(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") toggle(false); });
+
+  /* minimizar e arrastar */
+  var z = 10;
+  Array.prototype.forEach.call(document.querySelectorAll("[data-win]"), function (win) {
+    var bar = win.querySelector(".bar"), x = 0, y = 0, sx, sy, ox, oy, drag = false;
+    win.querySelector("[data-min]").addEventListener("click", function () { win.classList.toggle("is-min"); });
+    win.addEventListener("pointerdown", function () { win.style.zIndex = ++z; });
+    bar.addEventListener("pointerdown", function (e) {
+      if (e.target.closest("button")) return;
+      drag = true; sx = e.clientX; sy = e.clientY; ox = x; oy = y; bar.setPointerCapture(e.pointerId); win.classList.add("is-drag");
+    });
+    bar.addEventListener("pointermove", function (e) {
+      if (!drag) return;
+      x = ox + e.clientX - sx; y = oy + e.clientY - sy;
+      win.style.transform = "translate(" + x + "px," + y + "px)";
+    });
+    function end() { drag = false; win.classList.remove("is-drag"); }
+    bar.addEventListener("pointerup", end); bar.addEventListener("pointercancel", end);
+  });
+})();
+</script>
+<script src="game.js"></script>
+</body>
+</html>
